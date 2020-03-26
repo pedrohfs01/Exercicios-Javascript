@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Digite o ano que nasceu: <input type="number" name="txtano" id="txtano"></p>
+    <p>
+        Digite o seu sexo: 
+        <input type="radio" name="rdsexo" id="mas" value="Masculino">Masculino
+        <input type="radio" name="rdsexo" id="fem" value="Feminino">Feminino
+    </p>
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id = "res">
+        <br><br>Resultado:
+    </div>
+    <script>
+        function verificar(){
+            var ano = document.getElementById("txtano");
+            var sexo = document.getElementsByName("rdsexo");
+            var res = document.getElementById("res");
+            var date = new Date();
+            var anoAtual = date.getFullYear();
+            var idade = anoAtual - Number(ano.value);
+            if(sexo[0].checked){
+                res.innerText = "Detectamos que é Homem e tem "+idade+" anos";
+            }
+            else{
+                res.innerText = "Detectamos que é Mulher e tem "+idade+" anos";
+            }
+        }
+    </script>
+</body>
+</html>
